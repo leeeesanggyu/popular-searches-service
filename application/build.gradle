@@ -8,9 +8,7 @@ group = 'com.salgu'
 version = 'unspecified'
 
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
+    sourceCompatibility = '21'
 }
 
 repositories {
@@ -18,7 +16,7 @@ repositories {
 }
 
 bootJar {
-    enabled = true
+    enabled = false
 }
 
 jar {
@@ -26,11 +24,13 @@ jar {
 }
 
 dependencies {
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-aop'
+}
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-    implementation project(':application')
+test {
+    useJUnitPlatform()
 }

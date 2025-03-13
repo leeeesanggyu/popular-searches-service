@@ -1,3 +1,5 @@
 rootProject.name = 'popular-searches-service'
 
 include 'configuration'
+include 'application'
+
