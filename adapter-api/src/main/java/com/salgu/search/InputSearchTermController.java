@@ -19,7 +19,7 @@ public class InputSearchTermController {
     public String input(@RequestBody InputSearchTermPayload term) {
         log.info("input: {}", term);
         SavePopularSearchTermCommand command = new SavePopularSearchTermCommand(term.keyword);
-        
+
         return savePopularSearchTermUseCase.save(command).getKeyword();
     }
 

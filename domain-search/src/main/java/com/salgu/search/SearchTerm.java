@@ -2,7 +2,7 @@ package com.salgu.search;
 
 public class SearchTerm {
 
-    private String keyword;
+    private final String keyword;
 
     private SearchTerm(String keyword) {
         this.keyword = keyword;

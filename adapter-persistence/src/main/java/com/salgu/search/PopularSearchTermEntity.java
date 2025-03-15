@@ -24,8 +24,8 @@ public class PopularSearchTermEntity {
     @Column(name = "id")
     private UUID id;
 
-    @Column(name = "search_term")
-    private String searchTerm;
+    @Column(name = "keyword")
+    private String keyword;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
@@ -40,6 +40,6 @@ public class PopularSearchTermEntity {
     }
 
     public SearchTerm toDomain() {
-        return SearchTerm.of(searchTerm);
+        return SearchTerm.of(keyword);
     }
 }
