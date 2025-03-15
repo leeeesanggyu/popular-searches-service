@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = true)
 @Service
 @RequiredArgsConstructor
-public class PopularSearchTermsService implements SavePopularSearchTermUseCase {
+public class PopularSearchTermService implements SavePopularSearchTermUseCase {
 
     private final PopularSearchTermCommandPort popularSearchTermCommandPort;
 
