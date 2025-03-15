@@ -3,4 +3,5 @@ rootProject.name = 'popular-searches-service'
 include 'configuration'
 include 'application'
 include 'domain-search'
+include 'adapter-persistence'
 

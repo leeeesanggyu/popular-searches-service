@@ -33,4 +33,5 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     implementation project(':application')
+    implementation project(':adapter-persistence')
 }
