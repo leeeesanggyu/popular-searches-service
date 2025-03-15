@@ -4,4 +4,5 @@ include 'configuration'
 include 'application'
 include 'domain-search'
 include 'adapter-persistence'
+include 'adapter-api'
 
