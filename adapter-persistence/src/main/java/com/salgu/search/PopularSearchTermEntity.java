@@ -1,9 +1,6 @@
 package com.salgu.search;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,8 +14,12 @@ import java.util.UUID;
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-@Table(name = "popular_search_term")
-public class PopularSearchTermEntity {
+@Table(
+        name = "popular_search_term"
+//        indexes = {
+//                @Index(name = "idx_keyword", columnList = "keyword")
+//        }
+)public class PopularSearchTermEntity {
 
     @Id
     @Column(name = "id")
