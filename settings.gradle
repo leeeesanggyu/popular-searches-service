@@ -5,4 +5,5 @@ include 'application'
 include 'domain-search'
 include 'adapter-persistence'
 include 'adapter-api'
+include 'adapter-persistence-ranking'
 
