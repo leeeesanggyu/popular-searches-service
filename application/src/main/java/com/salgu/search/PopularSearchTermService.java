@@ -8,9 +8,7 @@ import com.salgu.search.out.PopularSearchTermCommandPort;
 import com.salgu.search.out.PopularSearchTermQueryPort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-@Transactional(readOnly = true)
 @Service
 @RequiredArgsConstructor
 public class PopularSearchTermService implements SavePopularSearchTermUseCase, RetrievePopularSearchTermUseCase {
@@ -18,7 +16,6 @@ public class PopularSearchTermService implements SavePopularSearchTermUseCase, R
     private final PopularSearchTermCommandPort popularSearchTermCommandPort;
     private final PopularSearchTermQueryPort popularSearchTermQueryPort;
 
-    @Transactional
     @Override
     public SearchTerm save(SavePopularSearchTermCommand command) {
         SearchTerm searchTerm = SearchTerm.save(command.searchTerm());

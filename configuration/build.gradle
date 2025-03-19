@@ -34,6 +34,6 @@ dependencies {
 
     implementation project(':application')
     implementation project(':adapter-api')
-    implementation project(':adapter-persistence')
+//    implementation project(':adapter-persistence')
     implementation project(':adapter-persistence-ranking')
 }
