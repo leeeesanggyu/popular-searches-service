@@ -23,7 +23,8 @@ public class PropertiesConfiguration implements EnvironmentPostProcessor {
                                        SpringApplication application) {
         final var profiles = Arrays.asList(environment.getActiveProfiles());
         final var propertyPaths = List.of(
-                "properties/datasource.yml"
+                "properties/datasource.yml",
+                "properties/kafka.yml"
         );
         this.loadPropertiesFor(propertyPaths, profiles, environment);
     }
