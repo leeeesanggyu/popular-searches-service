@@ -2,7 +2,7 @@
 
 ## 실행 방법
 
-DB, Redis Run
+DB, Redis, Kafka Run <br>
 `docker-compose up -d`
 
 ## 블로그 포스팅
