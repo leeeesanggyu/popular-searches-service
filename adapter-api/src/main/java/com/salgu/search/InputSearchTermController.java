@@ -1,7 +1,6 @@
 package com.salgu.search;
 
-import com.salgu.search.in.SavePopularSearchTermCommand;
-import com.salgu.search.in.SavePopularSearchTermUseCase;
+import com.salgu.message.MessageProducer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,14 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class InputSearchTermController {
 
-    private final SavePopularSearchTermUseCase savePopularSearchTermUseCase;
+    private final MessageProducer messageProducer;
 
     @PostMapping("/search-terms")
     public String input(@RequestBody InputSearchTermPayload term) {
-        log.info("input: {}", term);
-        SavePopularSearchTermCommand command = new SavePopularSearchTermCommand(term.keyword);
-
-        return savePopularSearchTermUseCase.save(command).getKeyword();
+        messageProducer.send(term.keyword);
+        return term.keyword;
     }
 
     public record InputSearchTermPayload(
