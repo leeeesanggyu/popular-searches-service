@@ -1,9 +1,6 @@
 package com.salgu.search;
 
-import com.salgu.search.in.RetrievePopularSearchTermQuery;
-import com.salgu.search.in.RetrievePopularSearchTermUseCase;
-import com.salgu.search.in.SavePopularSearchTermCommand;
-import com.salgu.search.in.SavePopularSearchTermUseCase;
+import com.salgu.search.in.*;
 import com.salgu.search.out.PopularSearchTermCommandPort;
 import com.salgu.search.out.PopularSearchTermQueryPort;
 import lombok.RequiredArgsConstructor;
@@ -18,9 +15,12 @@ public class PopularSearchTermService implements SavePopularSearchTermUseCase, R
 
     @Override
     public SearchTerm save(SavePopularSearchTermCommand command) {
-        SearchTerm searchTerm = SearchTerm.save(command.searchTerm());
+        return popularSearchTermCommandPort.save(command.searchTerm());
+    }
 
-        return popularSearchTermCommandPort.save(searchTerm);
+    @Override
+    public void save(SavePopularSearchTermCountCommand command) {
+        popularSearchTermCommandPort.save(command.searchTerm(), command.count());
     }
 
     @Override

@@ -24,6 +24,13 @@ public class PopularSearchTermAdapter implements PopularSearchTermCommandPort, P
     }
 
     @Override
+    public void save(SearchTerm searchTerm, long count) {
+        redisTemplate
+                .opsForZSet()
+                .incrementScore(SEARCH_TERM_KEY, searchTerm.getKeyword(), count);
+    }
+
+    @Override
     public SearchTermCollection find(int limit) {
         Set<String> keywords = redisTemplate.opsForZSet().reverseRange(SEARCH_TERM_KEY, 0, limit - 1);
         List<SearchTerm> searchTerms = keywords.stream()

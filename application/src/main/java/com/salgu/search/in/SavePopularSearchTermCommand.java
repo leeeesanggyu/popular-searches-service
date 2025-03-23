@@ -1,6 +1,8 @@
 package com.salgu.search.in;
 
+import com.salgu.search.SearchTerm;
+
 public record SavePopularSearchTermCommand(
-        String searchTerm
+        SearchTerm searchTerm
 ) {
 }

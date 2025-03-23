@@ -22,6 +22,11 @@ public class PopularSearchTermAdapter implements PopularSearchTermCommandPort, P
     }
 
     @Override
+    public void save(SearchTerm searchTerm, long count) {
+        // TODO: Bulk Save 구현해야됨
+    }
+
+    @Override
     public SearchTermCollection find(int limit) {
         Pageable pageable = PageRequest.of(0, limit);
         List<Object[]> results = popularSearchTermRepository.findKeywordsOrderedByCount(pageable);
