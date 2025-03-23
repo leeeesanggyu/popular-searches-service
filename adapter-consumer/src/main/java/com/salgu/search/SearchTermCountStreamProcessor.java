@@ -34,18 +34,11 @@ public class SearchTermCountStreamProcessor {
                 .toStream()
                 .map((windowedKey, count) -> {
                     String keyword = windowedKey.key(); // 검색어 추출
-                    return KeyValue.pair(keyword, new SearchTermCount(keyword, count)); // 객체 변환
+                    return KeyValue.pair(keyword, SearchTermCount.of(keyword, count)); // 객체 변환
                 });
 
         // 4. Kafka 토픽으로 발행
         aggregatedStream.to(OUTPUT_TOPIC, Produced.with(Serdes.String(), new JsonSerde<>(SearchTermCount.class)));
         return searchTermsStream;
-    }
-
-    record SearchTermCount(
-            String keyword,
-            long count
-    ) {
-
     }
 }
