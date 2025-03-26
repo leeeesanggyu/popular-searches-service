@@ -1,4 +1,4 @@
-package com.salgu.search.in;
+package com.salgu.search.popular.in;
 
 public record RetrievePopularSearchTermQuery(
         int limit

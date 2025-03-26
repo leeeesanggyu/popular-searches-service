@@ -1,8 +1,10 @@
-package com.salgu.search;
+package com.salgu.search.popular;
 
-import com.salgu.search.in.*;
-import com.salgu.search.out.PopularSearchTermCommandPort;
-import com.salgu.search.out.PopularSearchTermQueryPort;
+import com.salgu.search.SearchTerm;
+import com.salgu.search.SearchTermCollection;
+import com.salgu.search.popular.in.*;
+import com.salgu.search.popular.out.PopularSearchTermCommandPort;
+import com.salgu.search.popular.out.PopularSearchTermQueryPort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.salgu.search.out;
+package com.salgu.search.popular.out;
 
 import com.salgu.search.SearchTermCollection;
 

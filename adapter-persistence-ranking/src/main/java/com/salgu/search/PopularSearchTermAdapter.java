@@ -1,7 +1,7 @@
 package com.salgu.search;
 
-import com.salgu.search.out.PopularSearchTermCommandPort;
-import com.salgu.search.out.PopularSearchTermQueryPort;
+import com.salgu.search.popular.out.PopularSearchTermCommandPort;
+import com.salgu.search.popular.out.PopularSearchTermQueryPort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;

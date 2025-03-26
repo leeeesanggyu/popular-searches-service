@@ -1,7 +1,7 @@
 package com.salgu.search;
 
-import com.salgu.search.in.SavePopularSearchTermCountCommand;
-import com.salgu.search.in.SavePopularSearchTermUseCase;
+import com.salgu.search.popular.in.SavePopularSearchTermCountCommand;
+import com.salgu.search.popular.in.SavePopularSearchTermUseCase;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;

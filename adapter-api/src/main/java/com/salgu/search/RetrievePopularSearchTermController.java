@@ -1,7 +1,7 @@
 package com.salgu.search;
 
-import com.salgu.search.in.RetrievePopularSearchTermQuery;
-import com.salgu.search.in.RetrievePopularSearchTermUseCase;
+import com.salgu.search.popular.in.RetrievePopularSearchTermQuery;
+import com.salgu.search.popular.in.RetrievePopularSearchTermUseCase;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;

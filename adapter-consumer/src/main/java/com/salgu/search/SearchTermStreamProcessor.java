@@ -46,10 +46,10 @@ public class SearchTermStreamProcessor {
     }
 
     private void processSearchTermTrending(KStream<String, String> searchTerms) {
-        // 검색어 빈도 집계 (10초 윈도우)
+        // 검색어 빈도 집계
         KTable<Windowed<String>, Long> searchCounts = searchTerms
                 .groupBy((key, value) -> value, Grouped.with(Serdes.String(), Serdes.String()))
-                .windowedBy(TimeWindows.ofSizeWithNoGrace(Duration.ofSeconds(10)))
+                .windowedBy(TimeWindows.ofSizeWithNoGrace(Duration.ofMinutes(10))) // 1분 윈도우
                 .count(Materialized.as("search-term-store"));
 
         // 이동 평균 기반 급상승 검색어 탐지
@@ -71,8 +71,8 @@ public class SearchTermStreamProcessor {
         long newAverage = (previousAverage + currentCount) / 2;
         TrendingSearchStore.updateAverage(term, newAverage);
 
-        // 급상승 여부 판단 (예: 이전 평균 대비 2배 이상 증가)
-        return currentCount >= previousAverage * 2;
+        // 급상승 여부 판단
+        return currentCount >= previousAverage * 2; // 이전 평균 대비 2배 이상 증가
     }
 
     public static class TrendingSearchStore {
