@@ -37,4 +37,5 @@ dependencies {
 //    implementation project(':adapter-persistence')
     implementation project(':adapter-persistence-ranking')
     implementation project(':adapter-consumer')
+    implementation project(':adapter-persistence-average')
 }

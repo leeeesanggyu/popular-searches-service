@@ -7,3 +7,5 @@ include 'adapter-persistence'
 include 'adapter-api'
 include 'adapter-persistence-ranking'
 include 'adapter-consumer'
+include 'adapter-persistence-average'
+
