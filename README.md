@@ -11,3 +11,4 @@ DB, Redis, Kafka Run <br>
 2. [실시간 인기 검색어 서비스 성능 최적화 - 효율적인 자료구조로 인기 검색어 저장하기 (With. Redis Sorted Set, ZSET)](https://velog.io/@salgu1998/실시간-인기-검색어-서비스-성능-최적화-Redis-Sorted-Set-ZSET)
 3. [실시간 인기 검색어 서비스 성능 최적화 - 효율적으로 검색어 입력받기 (With. Message Broker, Kafka)](https://velog.io/@salgu1998/실시간-인기-검색어-서비스-성능-최적화-Kafka)
 4. [실시간 인기 검색어 서비스 성능 최적화 - Redis의 부하 줄이기 (with. Kafka Streams)](https://velog.io/@salgu1998/실시간-인기-검색어-서비스-성능-최적화-Redis의-부하-줄이기-with.-Kafka-Streams)
+5. [실시간 인기 검색어 서비스 - 인기 급상승 검색어 탐지 기능(With. Kafka Streams, KTable)](https://velog.io/@salgu1998/실시간-인기-검색어-서비스-인기-급상승-검색어-탐지-기능With.-KTable)
